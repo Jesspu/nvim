@@ -18,11 +18,20 @@ if (empty($TMUX))
   endif
 endif
 
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
-set background=dark " for the dark version
-" set background=light " for the light version
-colorscheme one
+"Airline
+let g:airline_theme='onedark'
+
+"Theme
+let g:onedark_terminal_italics=1
+syntax on
+colorscheme onedark
+
+"Emmet
+let g:user_emmet_leader_key=','
+
+"Workspace
+let g:workspace_autosave_always = 1
 
 " How much history vim remembers
 set history=500
@@ -30,9 +39,6 @@ set history=500
 " Set to auto read changes outside of vim
 set autoread
 au FocusGained,BufEnter * checktime
-
-" Fast save
-nmap <leader>w :w!<cr>
 
 """"""""""
 " Line
@@ -80,13 +86,30 @@ set mat=2
 set scrolloff=5
 
 """"""""""
+" Commands
+""""""""""
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+
+""""""""""
 " Maps
 """"""""""
-noremap ' `
 
+" Auto close stuff
+inoremap { {}<Esc>ha
+inoremap ( ()<Esc>ha
+inoremap [ []<Esc>ha
+inoremap " ""<Esc>ha
+inoremap ' ''<Esc>ha
+inoremap ` ``<Esc>ha
+
+noremap ' `
+" Jump to definition
+nmap <silent> gd :call CocAction('jumpDefinition', 'tabe')<CR>
+" Fast Save
+nmap <leader>w :w!<cr>
 """"""""""
 " Workspace 
 """"""""""
 cd ~/Github
 
-nmap <silent> gd :call CocAction('jumpDefinition', 'tabe')<CR>

@@ -1,1 +1,2 @@
-"coc.preferences.formatOnSaveFileTypes": ["css", "js", "jsx", "html"],
+{"coc.preferences.formatOnSaveFileTypes": ["css", "js", "jsx", "html"],
+"diagnostic.checkCurrentLine": true}
