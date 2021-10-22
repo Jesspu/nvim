@@ -85,12 +85,26 @@ set mat=2
 
 set scrolloff=5
 
+"""""Control P"""""
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
 """"""""""
 " Commands
 """"""""""
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
+command! -nargs=0 P :CocCommand prettier.formatFile
+command! E :call ToggleNetRW()
+command! FS :CtrlP trim(execute('pwd'))
+command! RF :so ~/AppData/Local/nvim/.vimrc
+command! -nargs=1 WS noautocmd vimgrep /<args>/gj `git ls-files` | cw
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 
-
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 """"""""""
 " Maps
 """"""""""
@@ -108,8 +122,24 @@ noremap ' `
 nmap <silent> gd :call CocAction('jumpDefinition', 'tabe')<CR>
 " Fast Save
 nmap <leader>w :w!<cr>
+
+nnoremap H gT
+nnoremap L gt
+
+""""""""""
+" NETWR
+""""""""""
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_winsize = 25
+function ToggleNetRW()
+    if exists("g:netrw_buffer") && bufexists(g:netrw_buffer)
+        exe "bd".g:netrw_buffer | unlet g:netrw_buffer
+    else
+        Vexplore . | let g:netrw_buffer=bufnr("%")
+    endif
+endfunction
 """"""""""
 " Workspace 
 """"""""""
-cd ~/Github
 

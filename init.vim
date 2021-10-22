@@ -9,6 +9,7 @@ Plug 'Pocco81/AutoSave.nvim'
 Plug 'thaerkh/vim-workspace'
 Plug 'Valloric/MatchTagAlways'
 Plug 'mattn/emmet-vim'
+Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
 lua << EOF

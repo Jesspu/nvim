@@ -1,2 +1,5 @@
-{"coc.preferences.formatOnSaveFileTypes": ["css", "js", "jsx", "html"],
-"diagnostic.checkCurrentLine": true}
+{
+  "coc.preferences.formatOnSaveFileTypes": ["css", "js", "jsx", "html"],
+  "diagnostic.checkCurrentLine": true,
+  "coc.preferences.hoverTarget": "float"
+}
