@@ -23,6 +23,9 @@ source ~/AppData/Local/nvim/maps/maps.vim
     "Netrw
     source ~/AppData/Local/nvim/plugins/netrw.vim
 
+    "Auto Close
+    source ~/AppData/Local/nvim/plugins/autoclose.vim
+
 "Theme"
     "Set true colors
     if (empty($TMUX))
@@ -44,7 +47,15 @@ source ~/AppData/Local/nvim/maps/maps.vim
     colorscheme onedark
 
 "General"
-    " How much history vim remembers
+    "Set shell for terminal
+    if filereadable(expand("C:\\Program Files\\Git\\git-bash.exe"))
+        set shell=bash.exe
+    else
+        set shell=cmd.exe
+    endif
+
+
+        " How much history vim remembers
     set history=500
 
     " Set to auto read changes outside of vim

@@ -1,16 +1,9 @@
 
 "INSERT MAPS"
-    "Auto close {(["'`
-    inoremap { {}<Esc>ha
-    inoremap ( ()<Esc>ha
-    inoremap [ []<Esc>ha
-    inoremap " ""<Esc>ha
-    inoremap ' ''<Esc>ha
-    inoremap ` ``<Esc>ha
 
 "NORMAL MAPS"
     "Show documentaion for function under cursor"
-    nnoremap <silent> K :call <SID>show_documentation()<CR>
+    nnoremap <silent> K :call ShowDocs()<CR>
 
     "Move to tabs left and right
     nnoremap H gT

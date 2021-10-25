@@ -1,5 +1,5 @@
 "Function to show documentation"
-function! s:show_documentation()
+function ShowDocs()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
   else
