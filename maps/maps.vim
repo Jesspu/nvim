@@ -13,7 +13,7 @@
     noremap ' `
 
     " Jump to definition
-    nmap <silent> gd :call CocAction('jumpDefinition', 'tabe')<CR>
+    nmap <silent> gd :call CocAction('jumpDefinition')<CR>
 
     " Fast Save
     nmap <leader>w :w!<cr>

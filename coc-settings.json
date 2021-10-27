@@ -1,5 +1,7 @@
 {
   "coc.preferences.formatOnSaveFileTypes": ["css", "js", "jsx", "html"],
   "diagnostic.checkCurrentLine": true,
-  "coc.preferences.hoverTarget": "float"
+  "coc.preferences.hoverTarget": "float",
+  "pretteir.printWidth": 200,
+  "prettier.tabWidth": 4
 }

@@ -1,3 +1,6 @@
+"Airline
+    source ~/AppData/Local/nvim/plugins/airline.vim
+
 "Function Source"
 source ~/AppData/Local/nvim/functions/functions.vim
 
@@ -11,20 +14,17 @@ source ~/AppData/Local/nvim/maps/maps.vim
     "CtrlP
     source ~/AppData/Local/nvim/plugins/ctrlp.vim
 
-    "Airline
-    source ~/AppData/Local/nvim/plugins/airline.vim
-
     "Emmet
     source ~/AppData/Local/nvim/plugins/emmet.vim
 
     "Workspace
     source ~/AppData/Local/nvim/plugins/workspace.vim
 
-    "Netrw
-    source ~/AppData/Local/nvim/plugins/netrw.vim
-
     "Auto Close
     source ~/AppData/Local/nvim/plugins/autoclose.vim
+
+    "Bufferline
+    source ~/AppData/Local/nvim/plugins/bufferline.vim
 
 "Theme"
     "Set true colors
@@ -47,15 +47,8 @@ source ~/AppData/Local/nvim/maps/maps.vim
     colorscheme onedark
 
 "General"
-    "Set shell for terminal
-    if filereadable(expand("C:\\Program Files\\Git\\git-bash.exe"))
-        set shell=bash.exe
-    else
-        set shell=cmd.exe
-    endif
 
-
-        " How much history vim remembers
+    " How much history vim remembers
     set history=500
 
     " Set to auto read changes outside of vim
@@ -95,3 +88,4 @@ source ~/AppData/Local/nvim/maps/maps.vim
     "Cursor
     set cursorline
     set scrolloff=5
+    set mouse=a
