@@ -17,5 +17,3 @@
 
     " Fast Save
     nmap <leader>w :w!<cr>
-
-

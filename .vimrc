@@ -26,6 +26,9 @@ source ~/AppData/Local/nvim/maps/maps.vim
     "Bufferline
     source ~/AppData/Local/nvim/plugins/bufferline.vim
 
+    "NerdTree"
+    let NERDTreeQuitOnOpen = 1
+    let NERDTreeAutoDeleteBuffer = 1
 "Theme"
     "Set true colors
     if (empty($TMUX))
@@ -48,6 +51,7 @@ source ~/AppData/Local/nvim/maps/maps.vim
 
 "General"
 
+    set wildmenu
     " How much history vim remembers
     set history=500
 
@@ -65,6 +69,7 @@ source ~/AppData/Local/nvim/maps/maps.vim
     set tw=500
     set smarttab
 
+    set backspace=indent,eol,start
     set autoindent
     set cindent
     set si
@@ -89,3 +94,8 @@ source ~/AppData/Local/nvim/maps/maps.vim
     set cursorline
     set scrolloff=5
     set mouse=a
+
+    au UIEnter * :call ToggleSingleSplit()
+    au UIEnter * let s:std_in=1
+    au UIEnter * NERDTree
+    au UILeave * NERDTreeClose

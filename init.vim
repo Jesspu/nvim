@@ -16,5 +16,6 @@ Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 
-set runtimepath+=~/AppData/Local/nvim/site/autoload,~/AppData/Local/nvim/site/autoload/bufferline.nvim
+set runtimepath+=~/AppData/Local/nvim,~/AppData/Local/nvim/after
+set packpath+=~/AppData/Local/nvim
 source ~/AppData/Local/nvim/.vimrc
