@@ -13,6 +13,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'preservim/nerdtree'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 
