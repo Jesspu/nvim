@@ -3,5 +3,7 @@
   "diagnostic.checkCurrentLine": true,
   "coc.preferences.hoverTarget": "float",
   "pretteir.printWidth": 200,
-  "prettier.tabWidth": 4
+  "prettier.tabWidth": 4,
+  "svelte.enable-ts-plugin": true,
+  "javascript.suggestionActions.enabled": true
 }

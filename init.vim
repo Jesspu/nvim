@@ -24,6 +24,8 @@ Plug 'preservim/nerdtree'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
+Plug 'codechips/coc-svelte', {'do': 'npm install'}
+Plug 'leafOfTree/vim-svelte-plugin'
 call plug#end()
 
 

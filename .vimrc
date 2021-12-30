@@ -29,6 +29,12 @@ source ~/AppData/Local/nvim/maps/maps.vim
     "NerdTree"
     let NERDTreeQuitOnOpen = 1
     let NERDTreeAutoDeleteBuffer = 1
+    let NERDTreeShowHidden = 1
+
+    "vim-svelte-plugin"
+    let g:vim_svelte_plugin_use_sass = 1
+
+
 "Theme"
     "Set true colors
     if (empty($TMUX))
@@ -98,4 +104,17 @@ source ~/AppData/Local/nvim/maps/maps.vim
     au UIEnter * :call ToggleSingleSplit()
     au UIEnter * let s:std_in=1
     au UIEnter * NERDTree
+    au UIEnter * wincmd l
+    au UIEnter * wincmd l
+    au UIEnter * vsp
+    au UIEnter * wincmd l
+    au UIEnter * vertical resize 60
+    au UIEnter * set winfixwidth
+    au UIEnter * sp
+    au UIEnter * wincmd h
+    au UIEnter * wincmd h
     au UILeave * NERDTreeClose
+    au UILeave * %bdelete
+
+    "Terminal
+    tnoremap <Esc> <C-\><C-n>

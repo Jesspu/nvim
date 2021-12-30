@@ -10,7 +10,7 @@ endfunction
 "Only split if no splits
 function! ToggleSingleSplit()
     if len(tabpagebuflist()) > 1
-        
+
     else
         vsplit
     endif
