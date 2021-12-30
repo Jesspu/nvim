@@ -17,14 +17,3 @@
 
     " Fast Save
     nmap <leader>w :w!<cr>
-
-    "Use System Clipboard
-    noremap y "*y
-    noremap yy "*yy
-    noremap Y "*y$
-    noremap x "*x
-    noremap dd "*dd
-    noremap D "*D
-    noremap p "*p
-    noremap pp "*pp
-    noremap P "*p$

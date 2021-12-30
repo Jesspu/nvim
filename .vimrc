@@ -34,6 +34,8 @@ source ~/AppData/Local/nvim/maps/maps.vim
     "vim-svelte-plugin"
     let g:vim_svelte_plugin_use_sass = 1
 
+"Clipboard
+set clipboard+=unnamedplus
 
 "Theme"
     "Set true colors
