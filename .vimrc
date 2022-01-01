@@ -21,6 +21,7 @@ source ~/AppData/Local/nvim/maps/maps.vim
     source ~/AppData/Local/nvim/plugins/workspace.vim
 
     "Auto Close
+    let g:autoclose_break_brackets = 1
     source ~/AppData/Local/nvim/plugins/autoclose.vim
 
     "Bufferline
@@ -33,6 +34,7 @@ source ~/AppData/Local/nvim/maps/maps.vim
 
     "vim-svelte-plugin"
     let g:vim_svelte_plugin_use_sass = 1
+
 
 "Clipboard
 set clipboard+=unnamedplus
@@ -59,6 +61,8 @@ set clipboard+=unnamedplus
 
 "General"
 
+    "No Auto fold
+    set nofoldenable
     set wildmenu
     " How much history vim remembers
     set history=500

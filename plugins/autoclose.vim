@@ -85,8 +85,8 @@ fun <SID>ToggleAutoCloseMappings() " --- {{{2
         inoremap ) <C-R>=<SID>CloseStackPop(')')<CR>
         inoremap <silent> [ [<C-R>=<SID>CloseStackPush(']')<CR>
         inoremap <silent> ] <C-R>=<SID>CloseStackPop(']')<CR>
-        "inoremap <silent> { {<C-R>=<SID>CloseStackPush('}')<CR>
-        inoremap <silent> { <C-R>=<SID>OpenSpecial('{','}')<CR>
+        inoremap <silent> { {<C-R>=<SID>CloseStackPush('}')<CR>
+        "inoremap <silent> { <C-R>=<SID>OpenSpecial('{','}')<CR>
         inoremap <silent> } <C-R>=<SID>CloseStackPop('}')<CR>
         inoremap <silent> <BS> <C-R>=<SID>OpenCloseBackspace()<CR>
         inoremap <silent> <C-h> <C-R>=<SID>OpenCloseBackspace()<CR>
@@ -208,11 +208,6 @@ function s:SID()
 endfun
 
 function <SID>OpenCloseBackspace() " ---{{{2
-    "if pumvisible()
-    "    pclose
-    "    call <SID>StopOmni()
-    "    return "\<C-E>"
-    "else
         let curline = getline('.')
         let curpos = col('.')
         let curletter = curline[curpos-1]
@@ -229,7 +224,6 @@ function <SID>OpenCloseBackspace() " ---{{{2
         else
             return "\<BS>"
         endif
-    "endif
 endf
 
 " Initialization ----------------------------------------{{{1
