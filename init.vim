@@ -26,6 +26,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
 Plug 'codechips/coc-svelte', {'do': 'npm install'}
 Plug 'leafOfTree/vim-svelte-plugin'
+Plug 'voldikss/vim-floaterm'
 call plug#end()
 
 
