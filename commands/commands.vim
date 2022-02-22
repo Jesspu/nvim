@@ -23,5 +23,9 @@ command! FTN :FloatermNew
 
 command! FTT :FloatermToggle
 
+command! FTNe :FloatermNext
+
+command! FTPr :FloatermPrev
+
 "Generate Tags
 command! GT :!ctags -R --exclude=node_modules --exclude=.git --exclude=android --exclude=ios --exclude=www --exclude=public --exclude=package.json --exclude=package-lock.json --exclude=Session.vim --exclude=.undodir --exclude=.idea --exclude=.sonar --exclude=cypress --exclude=test --exclude=resources --exclude=cypress.json --exclude=debug.keystore --exclude=debug.keystore.lock --exclude=README.md --exclude=bash.exe.stackdump --exclude=sh.exe.stackdump
