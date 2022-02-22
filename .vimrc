@@ -113,10 +113,6 @@ set clipboard+=unnamedplus
     au UIEnter * wincmd l
     au UIEnter * wincmd l
     au UIEnter * vsp
-    au UIEnter * wincmd l
-    au UIEnter * vertical resize 60
-    au UIEnter * set winfixwidth
-    au UIEnter * sp
     au UIEnter * wincmd h
     au UIEnter * wincmd h
     au UILeave * NERDTreeClose
