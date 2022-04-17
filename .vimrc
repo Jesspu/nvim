@@ -1,5 +1,5 @@
 "Airline
-    source ~/AppData/Local/nvim/plugins/airline.vim
+source ~/AppData/Local/nvim/plugins/airline.vim
 
 "Function Source"
 source ~/AppData/Local/nvim/functions/functions.vim
@@ -34,6 +34,9 @@ source ~/AppData/Local/nvim/maps/maps.vim
 
     "vim-svelte-plugin"
     let g:vim_svelte_plugin_use_sass = 1
+
+    "Easy Motion"
+    source ~/AppData/Local/nvim/plugins/easymotion.vim
 
 
 "Clipboard
@@ -106,17 +109,6 @@ set clipboard+=unnamedplus
     set cursorline
     set scrolloff=5
     set mouse=a
-
-    au UIEnter * :call ToggleSingleSplit()
-    au UIEnter * let s:std_in=1
-    au UIEnter * NERDTree
-    au UIEnter * wincmd l
-    au UIEnter * wincmd l
-    au UIEnter * vsp
-    au UIEnter * wincmd h
-    au UIEnter * wincmd h
-    au UILeave * NERDTreeClose
-    au UILeave * %bdelete
 
     "Terminal
     tnoremap <Esc> <C-\><C-n>

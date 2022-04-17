@@ -27,6 +27,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'codechips/coc-svelte', {'do': 'npm install'}
 Plug 'leafOfTree/vim-svelte-plugin'
 Plug 'voldikss/vim-floaterm'
+Plug 'easymotion/vim-easymotion'
+Plug 'github/copilot.vim'
 call plug#end()
 
 
