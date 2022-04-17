@@ -11,15 +11,13 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 call plug#begin('~/AppData/local/nvim/site/autoload')
 Plug 'akinsho/bufferline.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'vim-airline/vim-airline'
-Plug 'tpope/vim-fugitive'
 Plug 'sheerun/vim-polyglot'
-Plug 'rakr/vim-one'
 Plug 'joshdick/onedark.vim'
+"https://github.com/natecraddock/workspaces.nvim
 Plug 'thaerkh/vim-workspace'
-Plug 'Valloric/MatchTagAlways'
 Plug 'mattn/emmet-vim'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'preservim/nerdtree'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
@@ -29,8 +27,15 @@ Plug 'leafOfTree/vim-svelte-plugin'
 Plug 'voldikss/vim-floaterm'
 Plug 'easymotion/vim-easymotion'
 Plug 'github/copilot.vim'
+Plug 'nvim-lualine/lualine.nvim'
 call plug#end()
 
+lua << END
+require('lualine').setup()
+END
+
+let g:python3_host_prog='C:/Program Files/Python310'
+let g:python_host_prog='C:/Program Files/Python310'
 
 set runtimepath+=~/AppData/Local/nvim,~/AppData/Local/nvim/after
 set packpath+=~/AppData/Local/nvim
