@@ -24,15 +24,15 @@ command! -nargs=1 SRC :%s/<args>/gc
 "Word Search - vimgrep for a word in a document"
 command! -nargs=1 WS noautocmd vimgrep /<args>/gj `git ls-files` | cw
 
-command! FTN :FloatermNew
+command! FF :FloatermNew
 
-command! FTT :FloatermToggle
+command! F :FloatermToggle
 
-command! FTNe :FloatermNext
+command! FN :FloatermNext
 
-command! FTPr :FloatermPrev
+command! FP :FloatermPrev
 
-command! FTK :FloatermKill
+command! FK :FloatermKill
 
 "Generate Tags
 command! GT :!ctags -R --exclude=node_modules --exclude=.git --exclude=android --exclude=ios --exclude=www --exclude=public --exclude=package.json --exclude=package-lock.json --exclude=Session.vim --exclude=.undodir --exclude=.idea --exclude=.sonar --exclude=cypress --exclude=test --exclude=resources --exclude=cypress.json --exclude=debug.keystore --exclude=debug.keystore.lock --exclude=README.md --exclude=bash.exe.stackdump --exclude=sh.exe.stackdump
