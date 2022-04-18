@@ -1,5 +1,5 @@
 "Prettier - Make the document pretty"
-command! -nargs=0 P :CocCommand prettier.formatFile
+command! -nargs=0 P :Prettier
 
 "Toggle File Explorer"
 command! E :NERDTreeToggle
@@ -8,6 +8,7 @@ command! R :NERDTreeRefreshRoot
 
 command! S :Telescope live_grep
 command! SF :Telescope git_files
+command! SW :Telescope workspaces
 
 "Refresh Vim - Reload the source .vimrc"
 command! RF :so ~/AppData/Local/nvim/.vimrc
