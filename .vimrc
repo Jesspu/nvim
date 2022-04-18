@@ -84,7 +84,6 @@ let g:compe.source.ultisnips = v:true
 
 autocmd vimenter * nested :Telescope workspaces
 autocmd vimleavepre * nested :NvimTreeClose
-autocmd vimleavepre,bufleave,insertleave * nested silent! :w
 
 "General"
 
