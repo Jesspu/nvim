@@ -16,9 +16,8 @@ Plug 'navarasu/onedark.nvim'
 Plug 'mattn/emmet-vim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'preservim/nerdtree'
+Plug 'kyazdani42/nvim-tree.lua'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'ryanoasis/vim-devicons'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'voldikss/vim-floaterm'
 Plug 'easymotion/vim-easymotion'
@@ -33,20 +32,33 @@ Plug 'natecraddock/sessions.nvim'
 call plug#end()
 
 lua << END
+require('nvim-web-devicons').setup({default = true})
 require('lualine').setup()
 require('onedark').load()
 require('gitsigns').setup()
+require'nvim-tree'.setup({
+open_file = {
+       quit_on_open = true
+    } 
+})
 require("workspaces").setup({
     hooks = {
         open = {function()
           require("sessions").load(nil, { silent = true })
-        end, "NERDTree"},
+        end, "NvimTreeOpen"},
         add = "SessionsSave"
     }
 })
 require("sessions").setup({
     events = {"VimLeavePre"},
     session_filepath = ".session"
+})
+require('telescope').setup({
+defaults = {
+    mappings = {
+        i = {["<Tab>"] = false}
+    }
+}
 })
 require('telescope').load_extension("workspaces")
 require'lspconfig'.eslint.setup{}

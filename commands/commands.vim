@@ -2,9 +2,9 @@
 command! -nargs=0 P :Prettier
 
 "Toggle File Explorer"
-command! E :NERDTreeToggle
+command! E :NvimTreeToggle
 
-command! R :NERDTreeRefreshRoot
+command! R :NvimTreeRefresh
 
 command! S :Telescope live_grep
 command! SF :Telescope git_files

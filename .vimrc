@@ -27,9 +27,6 @@ source ~/AppData/Local/nvim/maps/maps.vim
     "Bufferline
     source ~/AppData/Local/nvim/plugins/bufferline.vim
 
-    "NerdTree"
-    let NERDTreeAutoDeleteBuffer = 1
-    let NERDTreeShowHidden = 1
 
     "vim-svelte-plugin"
     let g:vim_svelte_plugin_use_sass = 1
@@ -86,7 +83,7 @@ let g:compe.source.vsnip = v:true
 let g:compe.source.ultisnips = v:true
 
 autocmd vimenter * nested :Telescope workspaces
-autocmd vimleavepre * nested :NERDTreeClose
+autocmd vimleavepre * nested :NvimTreeClose
 autocmd vimleavepre,bufleave,insertleave * nested silent! :w
 
 "General"
