@@ -12,7 +12,6 @@ call plug#begin('~/AppData/local/nvim/site/autoload')
 Plug 'akinsho/bufferline.nvim'
 Plug 'sheerun/vim-polyglot'
 Plug 'navarasu/onedark.nvim'
-"https://github.com/natecraddock/workspaces.nvim
 Plug 'mattn/emmet-vim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -40,7 +39,9 @@ set completeopt=menu,menuone,noselect
 
 lua << END
 require('nvim-web-devicons').setup({default = true})
-require('autosave').setup()
+require('autosave').setup({
+    debounce_delay = 250
+})
 require('lualine').setup()
 require('onedark').load()
 require('gitsigns').setup()
@@ -169,6 +170,7 @@ lua << END
   -- Setup lspconfig.
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 local opts = { noremap=true, silent=false }
+vim.api.nvim_set_keymap('n', 'sd', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
   local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
@@ -177,7 +179,7 @@ local opts = { noremap=true, silent=false }
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'eslint', 'svelte', 'cssls', 'emmet_ls', 'html', 'jsonls', 'tailwindcss', 'vimls', 'tsserver' }
+local servers = { 'eslint', 'svelte', 'cssls', 'emmet_ls', 'html', 'jsonls', 'tailwindcss', 'vimls', 'tsserver', 'diagnosticls' }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     capabilities = capabilities,
