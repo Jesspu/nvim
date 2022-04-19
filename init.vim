@@ -1,43 +1,48 @@
-let data_dir = '/site'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-endif
+lua << END
+return require('packer').startup(function(use)
+  -- My plugins here
+use 'wbthomason/packer.nvim'
+use 'windwp/nvim-autopairs'
+use 'windwp/nvim-ts-autotag'
+use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+use 'akinsho/bufferline.nvim'
+use 'navarasu/onedark.nvim'
+use 'nvim-lua/plenary.nvim'
+use 'nvim-telescope/telescope.nvim'
+use 'kyazdani42/nvim-tree.lua'
+use 'kyazdani42/nvim-web-devicons'
+use 'lewis6991/gitsigns.nvim'
+use 'voldikss/vim-floaterm'
+use 'github/copilot.vim'
+use 'nvim-lualine/lualine.nvim'
+use 'neovim/nvim-lspconfig'
+use 'hrsh7th/cmp-nvim-lsp'
+use 'hrsh7th/cmp-buffer'
+use 'hrsh7th/cmp-path'
+use 'hrsh7th/cmp-cmdline'
+use 'hrsh7th/nvim-cmp'
+use 'jose-elias-alvarez/null-ls.nvim'
+use 'MunifTanjim/prettier.nvim'
+use 'natecraddock/workspaces.nvim'
+use 'natecraddock/sessions.nvim'
+use 'Pocco81/AutoSave.nvim'
+end)
+END
 
-" Run PlugInstall if there are missing plugins
-autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \| PlugInstall --sync | source $MYVIMRC
-\| endif
-
-call plug#begin('~/AppData/local/nvim/site/autoload')
-Plug 'akinsho/bufferline.nvim'
-Plug 'sheerun/vim-polyglot'
-Plug 'navarasu/onedark.nvim'
-Plug 'mattn/emmet-vim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'kyazdani42/nvim-tree.lua'
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'lewis6991/gitsigns.nvim'
-Plug 'voldikss/vim-floaterm'
-Plug 'easymotion/vim-easymotion'
-Plug 'github/copilot.vim'
-Plug 'nvim-lualine/lualine.nvim'
-Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'jose-elias-alvarez/null-ls.nvim'
-Plug 'MunifTanjim/prettier.nvim'
-Plug 'natecraddock/workspaces.nvim'
-Plug 'natecraddock/sessions.nvim'
-Plug 'Pocco81/AutoSave.nvim'
-call plug#end()
 
 set completeopt=menu,menuone,noselect
 
 lua << END
+require('nvim-treesitter.configs').setup({
+  ensure_installed = {'css', 'html', 'javascript', 'jsdoc', 'json', 'markdown', 'svelte', 'typescript'},
+  highlight = {enable = true},
+  autotag = {
+    enable = true,
+  }
+})
+require("bufferline").setup{options={separator_style="slant",numbers="buffer_id",diagnostic="coc",offsets={{filetype="nerdtree", text="File Explorer"}}}}
+--require('nvim-ts-autotag').setup()
+require('nvim-autopairs').setup({})
 require('nvim-web-devicons').setup({default = true})
 require('autosave').setup({
     debounce_delay = 250
