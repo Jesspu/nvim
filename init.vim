@@ -12,7 +12,7 @@ use 'nvim-telescope/telescope.nvim'
 use 'kyazdani42/nvim-tree.lua'
 use 'kyazdani42/nvim-web-devicons'
 use 'lewis6991/gitsigns.nvim'
-use 'voldikss/vim-floaterm'
+use "numToStr/FTerm.nvim"
 use 'github/copilot.vim'
 use 'nvim-lualine/lualine.nvim'
 use 'neovim/nvim-lspconfig'
@@ -33,6 +33,12 @@ END
 set completeopt=menu,menuone,noselect
 
 lua << END
+require('FTerm').setup({cmd = 'cmd.exe'})
+
+
+vim.api.nvim_create_user_command('F', require('FTerm').toggle, { bang = true })
+vim.api.nvim_create_user_command('FK', require('FTerm').close, { bang = true })
+
 require('nvim-treesitter.configs').setup({
   ensure_installed = {'css', 'html', 'javascript', 'jsdoc', 'json', 'markdown', 'svelte', 'typescript'},
   highlight = {enable = true},
