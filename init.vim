@@ -35,23 +35,27 @@ set completeopt=menu,menuone,noselect
 lua << END
 require('FTerm').setup({cmd = 'cmd.exe'})
 
+vim.api.nvim_set_keymap('n', 'gt', '<C-]>', { noremap=true, silent=true })
 
 vim.api.nvim_create_user_command('F', require('FTerm').toggle, { bang = true })
 vim.api.nvim_create_user_command('FK', require('FTerm').close, { bang = true })
 
 require('nvim-treesitter.configs').setup({
-  ensure_installed = {'css', 'html', 'javascript', 'jsdoc', 'json', 'markdown', 'svelte', 'typescript'},
+  ensure_installed = {'css', 'html', 'javascript', 'jsdoc', 'json', 'markdown', 'svelte', 'typescript', 'java'},
   highlight = {enable = true},
   autotag = {
     enable = true,
   }
 })
+
 require("bufferline").setup{options={separator_style="slant",numbers="buffer_id",diagnostic="coc",offsets={{filetype="nerdtree", text="File Explorer"}}}}
 --require('nvim-ts-autotag').setup()
 require('nvim-autopairs').setup({})
 require('nvim-web-devicons').setup({default = true})
+
+vim.opt.updatetime = 1000
 require('autosave').setup({
-    debounce_delay = 250
+    events = {"VimLeavePre", "CursorHold"},
 })
 require('lualine').setup()
 require('onedark').load()
@@ -180,7 +184,7 @@ lua << END
 
   -- Setup lspconfig.
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-local opts = { noremap=true, silent=false }
+local opts = { noremap=true, silent=true }
 vim.api.nvim_set_keymap('n', 'sd', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
   local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
