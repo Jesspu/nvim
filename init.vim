@@ -139,8 +139,7 @@ prettier.setup({
 END
 
 
-let g:python3_host_prog='C:/Python310'
-let g:python_host_prog='C:/Python310'
+let g:python3_host_prog='C:/Python310/python'
 
 lua << END
  -- Setup nvim-cmp.
