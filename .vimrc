@@ -1,5 +1,3 @@
-"Airline
-source ~/AppData/Local/nvim/plugins/airline.vim
 
 "Function Source"
 source ~/AppData/Local/nvim/functions/functions.vim
@@ -9,30 +7,6 @@ source ~/AppData/Local/nvim/commands/commands.vim
 
 "Maps Source"
 source ~/AppData/Local/nvim/maps/maps.vim
-
-"Plugins Sources"
-    "CtrlP
-    source ~/AppData/Local/nvim/plugins/ctrlp.vim
-
-    "Emmet
-    source ~/AppData/Local/nvim/plugins/emmet.vim
-
-    "Workspace
-    source ~/AppData/Local/nvim/plugins/workspace.vim
-
-    "Auto Close
-    let g:autoclose_break_brackets = 1
-    source ~/AppData/Local/nvim/plugins/autoclose.vim
-
-    "Bufferline
-    source ~/AppData/Local/nvim/plugins/bufferline.vim
-
-
-    "vim-svelte-plugin"
-    let g:vim_svelte_plugin_use_sass = 1
-
-    "Easy Motion"
-    source ~/AppData/Local/nvim/plugins/easymotion.vim
 
 
 "Clipboard
@@ -84,7 +58,6 @@ let g:compe.source.ultisnips = v:true
 
 autocmd vimenter * nested :Telescope workspaces
 autocmd vimleavepre * nested :NvimTreeClose
-autocmd vimleavepre,bufleave,insertleave * nested silent! :w
 
 "General"
 
