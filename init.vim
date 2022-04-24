@@ -121,8 +121,8 @@ prettier.setup({
 })
 END
 
-let g:python3_host_prog='C:/Program Files/Python310'
-let g:python_host_prog='C:/Program Files/Python310'
+let g:python3_host_prog='C:/Python310'
+let g:python_host_prog='C:/Python310'
 
 set runtimepath+=~/AppData/Local/nvim,~/AppData/Local/nvim/after
 set packpath+=~/AppData/Local/nvim
