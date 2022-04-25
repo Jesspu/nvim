@@ -7,7 +7,8 @@ command! E :NvimTreeToggle
 command! R :NvimTreeRefresh
 
 command! S :Telescope live_grep
-command! SF :Telescope git_files
+command! SGF :Telescope git_files
+command! SF :Telescope fine_files
 command! SW :Telescope workspaces
 
 "Refresh Vim - Reload the source .vimrc"

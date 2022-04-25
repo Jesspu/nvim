@@ -41,7 +41,7 @@ vim.api.nvim_create_user_command('F', require('FTerm').toggle, { bang = true })
 vim.api.nvim_create_user_command('FK', require('FTerm').close, { bang = true })
 
 require('nvim-treesitter.configs').setup({
-  ensure_installed = {'css', 'html', 'javascript', 'jsdoc', 'json', 'markdown', 'svelte', 'typescript', 'java'},
+  ensure_installed = {'css', 'html', 'javascript', 'jsdoc', 'json', 'markdown', 'svelte', 'typescript', 'java', 'lua'},
   highlight = {enable = true},
   autotag = {
     enable = true,
@@ -49,7 +49,7 @@ require('nvim-treesitter.configs').setup({
 })
 
 require("bufferline").setup{options={separator_style="slant",numbers="buffer_id",diagnostic="coc",offsets={{filetype="nerdtree", text="File Explorer"}}}}
---require('nvim-ts-autotag').setup()
+require('nvim-ts-autotag').setup()
 require('nvim-autopairs').setup({})
 require('nvim-web-devicons').setup({default = true})
 
@@ -78,11 +78,6 @@ require("sessions").setup({
     session_filepath = ".session"
 })
 require('telescope').setup({
-defaults = {
-    mappings = {
-        i = {["<Tab>"] = false}
-    }
-}
 })
 require('telescope').load_extension("workspaces")
 
@@ -117,7 +112,9 @@ prettier.setup({
     "scss",
     "postcss",
     "yaml",
-    "svelte"
+    "svelte",
+    "lua",
+    "vim"
   },
 
   -- prettier format options (you can use config files too. ex: `.prettierrc`)
@@ -142,9 +139,12 @@ END
 let g:python3_host_prog='C:/Python310/python'
 
 lua << END
- -- Setup nvim-cmp.
-  local cmp = require'cmp'
+-- Setup nvim-cmp.
+local cmp = require "cmp"
 
+-- Work with autopairs
+local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex = '' } }))
   cmp.setup({
     mapping = cmp.mapping.preset.insert({
       ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -197,7 +197,7 @@ vim.api.nvim_set_keymap('n', 'sd', '<cmd>lua vim.diagnostic.open_float()<CR>', o
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'eslint', 'svelte', 'cssls', 'emmet_ls', 'html', 'jsonls', 'tailwindcss', 'vimls', 'tsserver', 'diagnosticls' }
+local servers = { 'eslint', 'svelte', 'cssls', 'emmet_ls', 'html', 'jsonls', 'tailwindcss', 'vimls', 'tsserver', 'diagnosticls','sumneko_lua'}
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     capabilities = capabilities,
