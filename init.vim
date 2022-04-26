@@ -79,6 +79,7 @@ require("sessions").setup({
     session_filepath = ".session"
 })
 require('telescope').setup({
+pickers = { find_files = {hidden = true}, live_grep = {vimgrep_arguments = {'rg','--hidden', '--with-filename', '--line-number', '--column', '--smart-case'}} },
 })
 require('telescope').load_extension("workspaces")
 
