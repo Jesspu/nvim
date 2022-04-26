@@ -4,9 +4,6 @@
 "INSERT MAPS"
 
 "NORMAL MAPS"
-    "Move to tabs left and right
-    nnoremap H gT
-    nnoremap L gt
 
     "Remap ' to `
     noremap ' `
